@@ -1,0 +1,477 @@
+// April 21st,2021
+// Dev: Manny Quintanilla
+// Challenge: https://github.com/Audibene-GMBH/product.frontend-coding-challenge
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+$white: #FFFFFF;
+$light-grey: #F2F2F2;
+$grey: #F0F0F0;
+$black: #A9A9A9;
+$orange: #FFAE0D;
+$blue: #295EA5;
+$green: #006e2c;
+$light-green: #ccf1db;
+$dark-green: #006e2c4f;
+$red: red;
+$primary_font_family: 'Open Sans', sans-serif;
+
+// Presets
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $primary_font_family;
+}
+
+.hide-native-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.avoid-clicks {
+  pointer-events: none;
+}
+
+.error-message {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+
+  background: $red;
+  color: $white;
+  text-align: center;
+  font-weight:700;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.show {display:block;}
+.hide {display:none;}
+
+.btn-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 50px;
+  .next-btn {
+    background: $orange;
+    color: $white;
+  }
+}
+
+// Header
+.header-container {
+  height: 125px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .h-logo {
+    width: 95vw;
+    max-width: 411px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    div {
+      display: inline-block;
+      width: 20%;
+      vertical-align: middle;
+      text-align: center;
+    }
+    img {
+      width: 95%;
+    }
+    div:nth-child(2) {
+      width: 20%;
+    }
+    div:nth-child(3) {
+      width: 35%;
+    }
+  }
+}
+
+// Banner Image
+.hero-container {
+  margin-bottom: 2em;
+  .hero-image-mobile,
+  .hero-image-desktop {
+    width: 100%;
+  }
+  .hero-image-mobile {
+    display: block;
+  }
+  .hero-image-desktop {
+    display: none;
+  }
+}
+
+// Main Content
+.content {
+  width: 90%;
+  margin: 0 auto 3em auto;
+  font-style: normal;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  h1 {
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 49px;
+    margin-bottom: 1em;
+    text-decoration: underline;
+    -webkit-text-decoration-color: $orange;
+    text-decoration-color: $orange;
+  }
+  p {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 34px;
+    margin-bottom: 1em;
+  }
+  .rect-obj {
+    position: absolute;
+    width: 102px;
+    height: 166px;
+    left: -35px;
+    top: -9px;
+    background: $orange;
+    z-index: -1;
+  }
+}
+
+.txt-blue {
+  font-weight: 700;
+  color: $blue;
+}
+
+// Form
+section {
+  width: 100%;
+  background: $grey;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  .container {
+    max-width: 500px;
+    width: 90%;
+    padding-top: 60px;
+    padding-bottom: 70px;
+    position: relative;
+  }
+  h3 {
+    text-align: center;
+    width: 90%;
+    font-size: 24px;
+    margin: 0 auto 24px auto;
+  }
+  .step {
+    display: none;
+  }
+  .step.active {
+    display: block;
+  }
+  .form-group {
+    width: 80%;
+    margin-top: 5px;
+    background: $white;
+    display: inline-block;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 1px solid $black;
+    input {
+      width: 7%;
+      border: 1.5px solid rgba(128, 128, 128, 0.418);
+      padding: 3px;
+      font-size: 18px;
+      margin-top: 5px;
+      border-radius: 2px;
+      vertical-align: middle;
+      height: 40px;
+      margin-left: 16px;
+    }
+    label {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      float: right;
+      width: 66%;
+      margin-right: 30px;
+      height: 47px;
+      cursor: pointer;
+    }
+  }
+  button.next-btn,
+  button.previous-btn,
+  button.submit-btn {
+    float: right;
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  button.next-btn,
+  button.previous-btn {
+    background: transparent;
+  }
+  button.previous-btn {
+    float: left;
+  }
+  button.submit-btn {
+    background: $orange;
+    color: $white;
+  }
+  .label-class {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .reviewAnswers {
+    text-align: center;
+  }
+  .successful-message {
+    color: $green;
+    background-color: $light-green;
+    margin-top: -40px;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 1px solid $dark-green;
+    border-radius: 3px;
+  }
+}
+
+.next-arrow {
+  background: transparent;
+  position: absolute;
+  right: -30px;
+  top: 252px;
+}
+
+.previous-arrow {
+  background: transparent;
+  position: absolute;
+  left: -30px;
+  top: 252px;
+}
+
+.m-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+// Media queries
+@media all and (min-width:546px) {
+  .hero-image-mobile {
+    display: none !important;
+  }
+  .hero-image-desktop {
+    display: block !important;
+  }
+}
+
+@media all and (min-width:786px) {
+  body {
+    margin-bottom:10em;
+  }
+  .parent-container,
+  .header {
+    width: 711px;
+    margin: 0 auto;
+  }
+  .header-container {
+    background: $light-grey;
+    height: 72px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 25px;
+    .header {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 1em;
+      margin:0;
+    }
+  }
+  .h-logo img {
+    width: initial;
+  }
+  .content {
+    width: 100%;
+    margin-bottom: 50px;
+    h1 {
+      font-size: 56px;
+      line-height: 78px;
+      padding-right: 30px;
+    }
+    p {
+      line-height: 36px;
+    }
+    .rect-obj {
+      height: 260px;
+    }
+  }
+  .previous-arrow {
+    position: absolute;
+    top: 180px;
+    left: -85px;
+  }
+  .next-arrow {
+    position: absolute;
+    top: 180px;
+    right: -85px;
+  }
+  section .form-group {
+    width: 49%;
+    margin-top: 5px;
+    background: $white;
+    display: inline-block;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .m-center {
+    display: block;
+  }
+  section h3 {
+    width: 400px;
+  }
+}
+
+// Form Transition Animation
+.fade-in {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-name:fadeIn;
+  
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-name:fadeIn;
+  
+  -ms-animation-duration: 1s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-name:fadeIn;
+  
+  -o-animation-duration: 1s;
+  -o-animation-timing-function: ease;
+  -o-animation-name:fadeIn;
+  
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-name:fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }  
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  } 
+}
