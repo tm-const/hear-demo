@@ -1,6 +1,6 @@
 ## Thank you for taking the time to review my work. 👍
 
-<b>🌐 Live demo:</b> https://quizzical-kilby-4118b1.netlify.app/
+🌐  <b>Live demo:</b> https://sharp-brattain-b107ca.netlify.app/
 
 <hr />
 
