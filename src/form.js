@@ -3,6 +3,14 @@ const nextBtn = document.querySelectorAll("form .next-btn");
 const prevBtn = document.querySelectorAll("form .previous-btn");
 const form = document.querySelector("form");
 
+const results = [
+  'prevention', 
+  'old', 
+  'daily-life', 
+  'improve', 
+  'status'
+];
+
 nextBtn.forEach((button) => {
   button.addEventListener("click", () => {  
     parent = button.parentNode;
@@ -10,7 +18,7 @@ nextBtn.forEach((button) => {
 
     const rbs = document.querySelectorAll('#'+div.id+' input[name="'+div.id+'"]');
     let selectedValue;
-    for (const rb of rbs) {
+    for (let rb of rbs) {
         if (rb.checked) {
             selectedValue = rb.value;
             break;
@@ -50,11 +58,10 @@ form.addEventListener("submit", (e) => {
     });
   });
 
-  document.querySelector('.prevention').innerText = inputs[0].value;
-  document.querySelector('.old').innerText = inputs[1].value;
-  document.querySelector('.daily-life').innerText = inputs[2].value;
-  document.querySelector('.improve').innerText = inputs[3].value;
-  document.querySelector('.status').innerText = inputs[4].value;
+  for (let i = 0; i < results.length; i++) {
+    document.querySelector("."+results[i]).innerText = inputs[i].value;
+  }
+  console.log(inputs)
   form.reset();
 });
 
@@ -69,6 +76,7 @@ function changeStep(btn) {
   
   steps[index].classList.remove("active");
   steps[index].classList.remove("fade-in");
+  
   if (btn === "next") {
     index++;
     if (index == skipStep) {
@@ -77,6 +85,7 @@ function changeStep(btn) {
   } else if (btn === "prev") {
     index--;
   }
+  
   steps[index].classList.add("fade-in");
   steps[index].classList.add("active");
 }
