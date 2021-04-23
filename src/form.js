@@ -18,7 +18,7 @@ nextBtn.forEach((button) => {
 
     const rbs = document.querySelectorAll('#'+div.id+' input[name="'+div.id+'"]');
     let selectedValue;
-    for (let rb of rbs) {
+    for (const rb of rbs) {
         if (rb.checked) {
             selectedValue = rb.value;
             break;
